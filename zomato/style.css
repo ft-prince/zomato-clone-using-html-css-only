@@ -41,8 +41,15 @@ ul {
   padding-left: 30px;
   font-family: "Okra";
 }
+@media screen and (max-width: 800px) {
+  .upper-section nav,
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
-a {
+.upper-section a {
   text-decoration: none;
   color: #fff;
 }
@@ -58,6 +65,11 @@ a {
   padding-left: 1000px;
   padding-top: 20px;
   /* padding-bottom: 10px; */
+}
+@media screen and (max-width: 1500px) {
+  .logo img {
+    padding-left: 300px;
+  }
 }
 .mid-writing {
   /* background-color: navy; */
@@ -87,7 +99,28 @@ a {
   border-radius: 8px;
   flex-wrap: wrap;
 }
-
+@media screen and (max-width: 1700px) {
+  .logo img {
+    padding-left: 500px;
+  }
+  .search-things {
+    margin-left: 400px;
+  }
+  .mid-writing h1 {
+    margin-left: 200px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .logo img {
+    padding-left: 100px;
+  }
+  .search-things {
+    margin-left: 100px;
+  }
+  .mid-writing h1 {
+    margin-left: -150px;
+  }
+}
 .search-things input {
   font-size: 1.2rem;
   /* border: 1px solid black; */
@@ -105,6 +138,21 @@ a {
   padding-top: 20px;
   padding-bottom: 17px;
 }
+@media screen and (max-width: 1100px) {
+  .search-things .scnd {
+    width: 200px;
+  }
+  .search-things {
+    margin-left: 3rem;
+    width: 600px;
+  }
+  .search-things .First {
+    padding: 0px;
+  }
+  .mid-writing h1 {
+    margin-left: 0px;
+  }
+}
 .search-things p {
   font-size: 1.5rem;
 }
@@ -116,13 +164,14 @@ a {
   margin-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 55px;
   align-items: center;
   justify-content: center;
   padding-top: 30px;
 }
 .mid-section figure figcaption {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  color: #151010;
   /* display: flex; */
   align-items: center;
   flex-wrap: wrap;
@@ -133,27 +182,46 @@ a {
   margin-left: 5px;
 }
 .mid-section figure p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
   margin-left: 3px;
+  font-weight: 400;
+  color: #252424;
+}
+.mid-section figure {
+  transition: all 300ms 150ms;
+
+  /* transition-timing-function: ; */
 }
 .mid-section img {
   height: 300px;
   width: 520px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-}
+  border-top-right-radius: 0.9rem;
+  border-top-left-radius: 0.9rem;
+  /* transition-duration: 1ms; */
+  /* border-radius: 0.9rem; */
 
+  transition-property: all;
+}
+/* .mid-section img:hover {
+  transform: scale(1.1);
+} */
 figure {
   border: solid 1px #ccc;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  transition-property: all;
+  border-radius: 0.9rem;
+
+  /* transition-property: all; */
   /* transition-duration: 0.9s; */
-  /* transition-delay: 1s; */
+
+  /* transition-delay: s; */
+  transition-property: all;
+}
+.mid-section figure:hover {
+  transform: scale(1.07);
 }
 .mid-section figure a {
   color: black;
+  text-decoration: none;
 }
 .mid-section:hover figure {
   /* height: 200px;
@@ -194,18 +262,36 @@ figure {
 .mid-button a button {
   height: 120px;
   width: 550px;
-  border-radius: 1.5rem;
+  border-radius: 0.9rem;
   margin-bottom: 30px;
   border: 1px solid #ccc;
-
-  font-size: x-large;
+  font-size: 1.6rem;
   background-color: #fff;
+  font-weight: 550;
+  color: #3e3d3d;
 }
-.mid-button a button i {
-  padding-left: 12rem;
+/* .mid-button a button i {
+  padding-left: 17rem;
+} */
+.mid-button a button {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
 }
+@media screen and (max-width: 1100px) {
+  .mid-button a button {
+    margin-left: -150px;
+  }
+}
+.mid-button a {
+  text-decoration: none;
+}
+
 .mid-button a button:hover {
   cursor: pointer;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 .mid-button .see-more i {
   padding-left: 0rem;
@@ -238,6 +324,7 @@ figure {
   gap: 40px;
   align-items: center;
   flex-wrap: nowrap;
+  padding-left: 10rem;
 }
 .img-span {
   padding-top: 10rem;
@@ -249,12 +336,16 @@ figure {
 }
 .writing-span h2 {
   /* padding-bottom: 2rem; */
-  padding-left: 15px;
-  font-size: 4rem;
+  padding-left: 60px;
+  font-size: 6rem;
+  color: #3b3b3b;
 }
 .App-store-img img {
   height: 65px;
   width: 180px;
+}
+.App-store-img img:hover {
+  cursor: pointer;
 }
 .writing-span p {
   padding-top: 5rem;
@@ -282,7 +373,8 @@ figure {
   width: 450px;
   height: 40px;
   padding: 1rem;
-  font-size: 1.8rem;
+
+  font-weight: 1200;
   border-radius: 0.4rem;
 }
 .enter-details button {
@@ -302,6 +394,51 @@ figure {
   gap: 20px;
   padding-top: 15px;
   padding-left: 55px;
+}
+
+@media screen and (max-width: 1100px) {
+  .lower-part {
+  }
+  .writing-span h2 {
+    /* padding-bottom: 2rem; */
+    margin-left: 100px;
+    font-size: 3rem;
+  }
+  .lower-part img {
+    height: 350px;
+    width: 300px;
+  }
+  .writing-lower-part {
+    /* padding: rem; */
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-evenly; */
+    gap: 0px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 0rem;
+  }
+  .writing-span p {
+    padding-top: 2rem;
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  .App-store-img img {
+    height: 55px;
+    width: 100px;
+  }
+  .App-store-img {
+    margin-left: 150px;
+  }
+  .check-box {
+    margin-left: 100px;
+  }
+  .enter-details {
+    margin-left: 100px;
+  }
+  .writing-span p {
+    margin-left: 100px;
+  }
 }
 
 .section {
@@ -347,8 +484,12 @@ details a {
   color: black;
   list-style: circle;
   font-size: 2rem;
+  text-decoration: none;
 }
-details:hover {
+details ul a {
+  text-transform: none;
+}
+details summary:hover {
   cursor: pointer;
 }
 
@@ -369,6 +510,27 @@ details[open] summary {
   /* border-bottom: 1px solid #1b9c71; */
 
   margin-bottom: 0.5em;
+}
+@media screen and (max-width: 1100px) {
+  details a {
+    width: 400px;
+    display: flex;
+    gap: 1rem;
+    height: 150px;
+    font-size: 1.5rem;
+  }
+  summary {
+    align-items: flex-start;
+    margin: -0.5em -0.5em 0;
+    padding: 1.2em;
+    font-size: 1.5rem;
+    border: solid 1px #ccc;
+    /* background-color: aquamarine; */
+    width: 600px;
+    height: 15px;
+
+    justify-content: space-between;
+  }
 }
 .last-part {
   display: flex;
@@ -393,6 +555,9 @@ details[open] summary {
 .last-part a h2 {
   color: black;
   font-size: 2rem;
+}
+.last-part a {
+  text-decoration: none;
 }
 .final-touch button {
   height: 55px;
